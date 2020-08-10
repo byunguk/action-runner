@@ -1,14 +1,13 @@
-name: 'Hello World'
-description: 'Greet someone'
+name: 'Android'
+description: 'Run Android UI Test'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  api_version:  # id of input
+    description: 'API version'
     required: true
-    default: 'World'
+    default: '29'
 runs:
   using: "composite"
   steps: 
-    - run: echo Hello ${{ inputs.who-to-greet }}.
+    - name: Install Android Emulator
+      run: yes | sudo ${ANDROID_HOME}/tools/bin/sdkmanager 'system-images;android-${{ inputs.api_version }};google_apis;x86_64' 'emulator' --verbose --sdk_root=${ANDROID_SDK_ROOT}
       shell: bash
-    - run: echo "Nice to meet you!"
-      shell: pwsh
