@@ -13,5 +13,5 @@ runs:
         echo ${{ github.head_ref }}
         echo "ANDROID_HOME= ${ANDROID_HOME}"
         echo "ANDROID_SDK_ROOT= ${ANDROID_SDK_ROOT}"
-        yes | sudo ${ANDROID_HOME}/tools/bin/sdkmanager 'system-images;android-${{ inputs.api-version }};google_apis;x86_64' 'emulator' --verbose --sdk_root=${ANDROID_SDK_ROOT}
+#        yes | sudo ${ANDROID_HOME}/tools/bin/sdkmanager 'system-images;android-${{ inputs.api-version }};google_apis;x86_64' 'emulator' --verbose --sdk_root=${ANDROID_SDK_ROOT}
       shell: bash
