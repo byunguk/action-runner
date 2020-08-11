@@ -14,6 +14,7 @@ runs:
         echo ${{ github.head_ref }}
         echo "ANDROID_HOME= ${ANDROID_HOME}"
         echo "JAVA_HOME= ${JAVA_HOME}"
+        ls -la /Library/Java/JavaVirtualMachines/
         echo "export JAVA_OPTS='-XX:+IgnoreUnrecognizedVMOptions --add-modules java.se.ee'"
         java -version
         sudo ${ANDROID_HOME}/tools/bin/sdkmanager --update
