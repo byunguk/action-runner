@@ -9,6 +9,7 @@ runs:
   using: "composite"
   steps: 
     - name: Install Android Emulator
+      shell: bash
       run: |
         echo ${{ github.head_ref }}
         echo "ANDROID_HOME= ${ANDROID_HOME}"
@@ -16,5 +17,6 @@ runs:
         echo "export JAVA_OPTS='-XX:+IgnoreUnrecognizedVMOptions --add-modules java.se.ee'"
         java -version
         ls -la ${ANDROID_HOME}/tools/bin/
-        yes | sudo ${ANDROID_HOME}/tools/bin/sdkmanager 'system-images;android-${{ inputs.api-version }};google_apis;x86_64' 'emulator' --verbose --sdk_root=${ANDROID_HOME}
-      shell: bash
+        sudo ${ANDROID_HOME}/tools/bin/sdkmanager --update
+# yes | sudo ${ANDROID_HOME}/tools/bin/sdkmanager 'system-images;android-${{ inputs.api-version }};google_apis;x86_64' 'emulator' --verbose --sdk_root=${ANDROID_HOME}
+      
