@@ -16,7 +16,6 @@ runs:
         echo "JAVA_HOME= ${JAVA_HOME}"
         echo "export JAVA_OPTS='-XX:+IgnoreUnrecognizedVMOptions --add-modules java.se.ee'"
         java -version
-        ls -la ${ANDROID_HOME}/tools/bin/
         sudo ${ANDROID_HOME}/tools/bin/sdkmanager --update
 # yes | sudo ${ANDROID_HOME}/tools/bin/sdkmanager 'system-images;android-${{ inputs.api-version }};google_apis;x86_64' 'emulator' --verbose --sdk_root=${ANDROID_HOME}
       
