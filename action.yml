@@ -13,7 +13,7 @@ runs:
       run: |
         echo ${{ github.head_ref }}
         echo "ANDROID_HOME= ${ANDROID_HOME}"
-        export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+        export JAVA_HOME="/usr/libexec/java_home -v 1.8"
         echo "JAVA_HOME= ${JAVA_HOME}"
         ls -la /Library/Java/JavaVirtualMachines/
         echo "export JAVA_OPTS='-XX:+IgnoreUnrecognizedVMOptions --add-modules java.se.ee'"
