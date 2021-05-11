@@ -16,8 +16,11 @@ runs:
         echo "JAVA_HOME=${JAVA_HOME}"
         ls -la /Library/Java/JavaVirtualMachines/
         java -version
-        echo "no | ${ANDROID_HOME}/tools/bin/avdmanager --verbose create avd --force --name 'testAVD' --package 'system-images;android-${{ inputs.api-version }};google_apis;x86' --abi 'x86'"
+        echo "no | ${ANDROID_HOME}/tools/bin/avdmanager --verbose create avd --force --name 'TestAVD' --package 'system-images;android-${{ inputs.api-version }};google_apis;x86' --abi 'x86'"
 #        echo "export JAVA_OPTS='-XX:+IgnoreUnrecognizedVMOptions --add-modules java.xml.bind'"
 #        sudo ${ANDROID_HOME}/tools/bin/sdkmanager --update
 #       yes | sudo ${ANDROID_HOME}/tools/bin/sdkmanager 'system-images;android-${{ inputs.api-version }};google_apis;x86_64' 'emulator' --verbose --sdk_root=${ANDROID_HOME}
 #       echo "export JAVA_OPTS='-XX:+IgnoreUnrecognizedVMOptions --add-modules java.se.ee'"
+    - name: Run Android Emulator
+      shell: bash
+      run: ${ANDROID_HOME}/tools/emulator @TestAVD -wipe-data -no-window
