@@ -7,7 +7,7 @@ ${ANDROID_HOME}/tools/emulator @TestAVD -netdelay none -no-snapshot -wipe-data -
 echo "Waiting Emulator"
 WAIT_CMD="${ANDROID_HOME}/platform-tools/adb wait-for-device shell getprop init.svc.bootanim"
 until $WAIT_CMD | grep -m 1 stopped; do 
-  echo "..."
+  echo "."
   sleep 1
 done
 
