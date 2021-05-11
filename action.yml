@@ -16,7 +16,7 @@ runs:
         echo "JAVA_HOME=${JAVA_HOME}"
         ls -la /Library/Java/JavaVirtualMachines/
         java -version
-        echo "no | Android/Sdk/tools/bin/avdmanager create avd --force --name testAVD --abi google_apis/x86_64 --package 'system-images;android-${{ inputs.api-version }};google_apis;x86_64'"
+        echo "no | Android/Sdk/tools/bin/avdmanager create avd --force --name testAVD --abi google_apis/x86_64 --package 'system-images;android-${{ inputs.api-version }};google_apis;x86'"
 #        echo "export JAVA_OPTS='-XX:+IgnoreUnrecognizedVMOptions --add-modules java.xml.bind'"
 #        sudo ${ANDROID_HOME}/tools/bin/sdkmanager --update
 #       yes | sudo ${ANDROID_HOME}/tools/bin/sdkmanager 'system-images;android-${{ inputs.api-version }};google_apis;x86_64' 'emulator' --verbose --sdk_root=${ANDROID_HOME}
